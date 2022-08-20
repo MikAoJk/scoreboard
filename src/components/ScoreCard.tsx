@@ -1,8 +1,8 @@
 import {PlayerProps} from "./Player";
 import PlayerList from "./PlayerList";
-import './PlayerCard.css'
+import './ScoreCard.css'
 
-const PlayerCard = () => {
+const ScoreCard = () => {
 
     const joakim: PlayerProps = {
         name: "Joakim",
@@ -18,10 +18,10 @@ const PlayerCard = () => {
         [joakim, birgitte]
 
     return (
-        <div className="playercard">
+        <div className="scorecard">
             <tr>
-                <th>Name</th>
-                <th>Score</th>
+                <th></th>
+                <th></th>
                 <th></th>
             </tr>
             <PlayerList players={dummyPlayers}/>
@@ -29,4 +29,4 @@ const PlayerCard = () => {
     )
 }
 
-export default PlayerCard
+export default ScoreCard

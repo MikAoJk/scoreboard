@@ -1,5 +1,5 @@
 import './ScoreBoard.css'
-import PlayerCard from "./PlayerCard";
+import ScoreCard from "./ScoreCard";
 
 
 const ScoreBoard = () => {
@@ -8,7 +8,7 @@ const ScoreBoard = () => {
             <h1>ScoreBoard</h1>
             <table>
                 <tbody>
-                <PlayerCard/>
+                <ScoreCard/>
                 </tbody>
             </table>
         </div>
