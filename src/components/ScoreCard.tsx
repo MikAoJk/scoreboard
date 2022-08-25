@@ -1,20 +1,20 @@
-import {PlayerProps} from "./Player";
+import {PlayerData} from "./Player";
 import PlayerList from "./PlayerList";
 import './ScoreCard.css'
 
 const ScoreCard = () => {
 
-    const joakim: PlayerProps = {
+    const joakim: PlayerData = {
         name: "Joakim",
-        score: 410
+        score: 0
     }
 
-    const birgitte: PlayerProps = {
+    const birgitte: PlayerData = {
         name: "Birgitte",
-        score: 310
+        score: 0
     }
 
-    const dummyPlayers =
+    const initPlayers =
         [joakim, birgitte]
 
     return (
@@ -24,7 +24,7 @@ const ScoreCard = () => {
                 <th></th>
                 <th></th>
             </tr>
-            <PlayerList players={dummyPlayers}/>
+            <PlayerList players={initPlayers}/>
         </div>
     )
 }
