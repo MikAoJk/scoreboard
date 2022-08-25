@@ -27,7 +27,6 @@ const PlayerScoreForm = (playerScoreFormProps: PlayerScoreFormProps) => {
     return (
         <form onSubmit={submitHandler}>
             <div>
-
                 <div>
                     <label>Score</label>
                     <input type="number" value={enteredPlayerScore} step="1" onChange={playerScoreChangeHandler}/>
