@@ -1,12 +1,12 @@
 import {ChangeEvent, FormEvent, useState} from "react";
 import {PlayerData} from "./Player";
 
-interface AddNewPlayerFormProps {
-    onSaveAddNewPlayer: (action: PlayerData) => void;
+interface AddPlayerFormProps {
+    onSaveAddPlayer: (action: PlayerData) => void;
     onCancel: () => void;
 }
 
-const AddNewPlayerForm = (addNewPlayerFormProps: AddNewPlayerFormProps) => {
+const AddPlayerForm = (addPlayerFormProps: AddPlayerFormProps) => {
 
     const [enteredPlayerName, setPlayerData] = useState('')
 
@@ -22,7 +22,7 @@ const AddNewPlayerForm = (addNewPlayerFormProps: AddNewPlayerFormProps) => {
             score: 0
         }
 
-        addNewPlayerFormProps.onSaveAddNewPlayer(playerData)
+        addPlayerFormProps.onSaveAddPlayer(playerData)
 
         setPlayerData('')
 
@@ -37,10 +37,10 @@ const AddNewPlayerForm = (addNewPlayerFormProps: AddNewPlayerFormProps) => {
                 </div>
             </div>
             <div>
-                <button onClick={addNewPlayerFormProps.onCancel} type="button">Cancel</button>
+                <button onClick={addPlayerFormProps.onCancel} type="button">Cancel</button>
                 <button type="submit">Add</button>
             </div>
         </form>
     )
 }
-export default AddNewPlayerForm
+export default AddPlayerForm

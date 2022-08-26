@@ -1,6 +1,6 @@
 import './ScoreBoard.css'
 import ScoreCard from "./ScoreCard";
-import AddNewPlayer from "./AddNewPlayer";
+import AddPlayer from "./AddPlayer";
 import {useState} from "react";
 import {PlayerData} from "./Player";
 import RemovePlayer from "./RemovePlayer";
@@ -44,7 +44,7 @@ const ScoreBoard = () => {
                 <ScoreCard players={players}/>
                 </tbody>
             </table>
-            <AddNewPlayer onChangAddNewPlayer={addPlayerHandler}/>
+            <AddPlayer onChangAddPlayer={addPlayerHandler}/>
             <RemovePlayer onChangRemovePlayer={removePlayerHandler}/>
         </div>
     )
