@@ -32,7 +32,7 @@ const RemovePlayerForm = (removePlayerFormProps: RemovePlayerFormProps) => {
             </div>
             <div>
                 <button onClick={removePlayerFormProps.onCancel} type="button">Cancel</button>
-                <button type="submit">Add</button>
+                <button type="submit">Remove</button>
             </div>
         </form>
     )
