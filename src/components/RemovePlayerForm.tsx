@@ -25,7 +25,7 @@ const RemovePlayerForm = (removePlayerFormProps: RemovePlayerFormProps) => {
     return (
         <form onSubmit={submitHandler}>
             <div>
-                <div class="text-black">
+                <div>
                     <label>Name</label>
                     <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName} onChange={addNewPlayerChangeHandler}/>
                 </div>
