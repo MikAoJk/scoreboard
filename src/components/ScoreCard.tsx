@@ -1,6 +1,5 @@
 import {PlayerData} from "./Player";
 import PlayerList from "./PlayerList";
-import './ScoreCard.css'
 
 
 export interface ScoreCardProps {
