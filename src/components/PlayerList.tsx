@@ -1,5 +1,6 @@
-import Player, {PlayerData} from "./Player";
+
 import './PlayerList.css'
+import Player, {PlayerData} from "@/components/Player";
 
 export interface PlayerProps {
     players: PlayerData[];
@@ -13,7 +14,7 @@ const PlayerList = (playerProps: PlayerProps) => {
         <div className="playerlist">
             {playersSortedByScore
                 .map(player =>
-                    <Player playerData={player}
+                    <Player playerData={player} key={player.id}
                     />
                 )}
         </div>

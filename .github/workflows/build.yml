@@ -1,23 +1,41 @@
-name: build main branch
-on:
-  push:
-    branches:
-      - main
+name: build and deploy
+on: push
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     name: build
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_BASE_PATH: /scoreboard
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: use Node.js 16
-        uses: actions/setup-node@v3.2.0
-        with:
-          node-version: '16'
-      - run: npm ci
+        uses: actions/checkout@v4
+      - name: setup bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install packages
+        run: bun install
       - name: Build
-        run: npm run build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        run: bun run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: build
+          path: ./out
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

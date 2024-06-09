@@ -1,17 +1,21 @@
-import './ScoreBoard.css'
-import ScoreCard from "./ScoreCard";
-import AddPlayer from "./AddPlayer";
-import {useState} from "react";
-import {PlayerData} from "./Player";
-import RemovePlayer from "./RemovePlayer";
+'use client';
+
+import {PlayerData} from "@/components/Player";
+import RemovePlayer from "@/components/RemovePlayer";
+import AddPlayer from "@/components/AddPlayer";
+import ScoreCard from "@/components/ScoreCard";
+
+import React, {useState} from 'react';
 
 
 const joakim: PlayerData = {
+    id: 1,
     name: "Joakim",
     score: 0
 }
 
 const birgitte: PlayerData = {
+    id: 2,
     name: "Birgitte",
     score: 0
 }

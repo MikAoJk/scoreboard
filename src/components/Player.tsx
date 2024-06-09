@@ -18,7 +18,7 @@ const Player = (playerProps: PlayerProps) => {
 
     return (
         <div>
-            <tr>
+            <tr key={playerProps.playerData.id}>
                 <td>{playerProps.playerData.name}</td>
                 <td>{playerScore}</td>
                 <td><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></td>
@@ -28,6 +28,7 @@ const Player = (playerProps: PlayerProps) => {
 }
 
 export type PlayerData = {
+    id: number,
     name: string
     score: number
 }

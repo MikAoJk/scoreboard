@@ -18,6 +18,7 @@ const AddPlayerForm = (addPlayerFormProps: AddPlayerFormProps) => {
         event.preventDefault()
 
         const playerData: PlayerData = {
+            id: 3, // TODO fix id, to increase based on number of players
             name: enteredPlayerName,
             score: 0
         }
