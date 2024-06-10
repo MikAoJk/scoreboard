@@ -6,18 +6,11 @@ export interface ScoreCardProps {
     players: PlayerData[];
 }
 
-const ScoreCard = (players :ScoreCardProps) => {
+const ScoreCard = (players: ScoreCardProps) => {
 
 
     return (
-        <div className="scorecard">
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <PlayerList players={players.players}/>
-        </div>
+        <PlayerList players={players.players}/>
     )
 }
 

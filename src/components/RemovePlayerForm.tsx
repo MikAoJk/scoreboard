@@ -27,12 +27,13 @@ const RemovePlayerForm = (removePlayerFormProps: RemovePlayerFormProps) => {
             <div>
                 <div>
                     <label>Name</label>
-                    <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName} onChange={addNewPlayerChangeHandler}/>
+                    <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName}
+                           onChange={addNewPlayerChangeHandler} className="text-black"/>
                 </div>
             </div>
             <div>
                 <button onClick={removePlayerFormProps.onCancel} type="button">Cancel</button>
-                <button type="submit">Remove</button>
+                <button type="submit" className="bg-red-700">Remove</button>
             </div>
         </form>
     )

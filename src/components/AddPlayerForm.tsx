@@ -4,9 +4,10 @@ import {PlayerData} from "./Player";
 interface AddPlayerFormProps {
     onSaveAddPlayer: (action: PlayerData) => void;
     onCancel: () => void;
+    numberOfPlayers: number;
 }
 
-const AddPlayerForm = (addPlayerFormProps: AddPlayerFormProps) => {
+const AddPlayerForm = (addPlayerFormProps: AddPlayerFormProps, numberOfPlayers: number) => {
 
     const [enteredPlayerName, setPlayerData] = useState('')
 
@@ -18,7 +19,7 @@ const AddPlayerForm = (addPlayerFormProps: AddPlayerFormProps) => {
         event.preventDefault()
 
         const playerData: PlayerData = {
-            id: 3, // TODO fix id, to increase based on number of players
+            id: (numberOfPlayers + 1),
             name: enteredPlayerName,
             score: 0
         }
@@ -34,12 +35,12 @@ const AddPlayerForm = (addPlayerFormProps: AddPlayerFormProps) => {
             <div>
                 <div>
                     <label>Name</label>
-                    <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName} onChange={addNewPlayerChangeHandler}/>
+                    <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName} onChange={addNewPlayerChangeHandler} className="text-black"/>
                 </div>
             </div>
             <div>
-                <button onClick={addPlayerFormProps.onCancel} type="button">Cancel</button>
-                <button type="submit">Add</button>
+                <button onClick={addPlayerFormProps.onCancel} type="button" className="mr-20 bg-yellow-400">Cancel</button>
+                <button type="submit" className="bg-green-600">Add</button>
             </div>
         </form>
     )

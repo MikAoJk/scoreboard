@@ -1,6 +1,5 @@
 import PlayerScoreForm from "./PlayerScoreForm";
 import {useState} from "react";
-import './ChangePlayerScore.css'
 
 
 interface ChangePlayerScoreProps {
@@ -25,8 +24,8 @@ const ChangePlayerScore = (changePlayerScoreProp: ChangePlayerScoreProps) => {
     }
 
     return (
-        <div className="changeplayerscore">
-            {!isEditing && <button onClick={startEditingHandler} type="button">+/-</button>}
+        <div>
+            {!isEditing && <button onClick={startEditingHandler} type="button" className="cursor-pointer bg-gray-900 text-white ml-2">+/-</button>}
             {isEditing && <PlayerScoreForm onSavePlayerScore={savePlayerScoreHandler} onCancel={stopEditingHandler}/>}
         </div>
     )
