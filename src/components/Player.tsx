@@ -17,11 +17,11 @@ const Player = (playerProps: PlayerProps) => {
     }
 
     return (
-        <tr key={playerProps.playerData.id}>
-            <td>{playerProps.playerData.name}</td>
-            <td>{playerScore}</td>
-            <td><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></td>
-        </tr>
+        <ul>
+            <li>{playerProps.playerData.name}</li>
+            <li>{playerScore}</li>
+            <li><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></li>
+        </ul>
     )
 }
 
