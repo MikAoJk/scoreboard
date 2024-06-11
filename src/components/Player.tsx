@@ -17,9 +17,11 @@ const Player = (playerProps: PlayerProps) => {
     }
 
     return (
+        <div>
             <li>{playerProps.playerData.name}</li>
             <li>{playerScore}</li>
             <li><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></li>
+        </div>
     )
 }
 
