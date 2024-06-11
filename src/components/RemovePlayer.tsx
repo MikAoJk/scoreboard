@@ -26,7 +26,7 @@ const RemovePlayer = (removePlayerProps: RemovePlayerProps) => {
     return (
         <div>
             {!isEditing && <button onClick={startEditingHandler} type="button"
-                                   className="cursor-pointer bg-red-700 text-white">Remove</button>}
+                                   className="cursor-pointer bg-red-700 text-white mt-4">Remove</button>}
             {isEditing &&
                 <RemovePlayerForm onSaveRemovePlayer={saveRemovePlayerHandler} onCancel={stopEditingHandler}/>}
         </div>
