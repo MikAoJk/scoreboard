@@ -43,16 +43,7 @@ const ScoreBoard = () => {
     return (
         <div className="p-4 text-center">
             <h1 className="text-white">ScoreBoard</h1>
-            <table id="scorecard">
-                <tbody>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <ScoreCard players={players}/>
-                </tbody>
-            </table>
+            <ScoreCard players={players}/>
             <AddPlayer onChangAddPlayer={addPlayerHandler} numberOfPlayers={players.length}/>
             <RemovePlayer onChangRemovePlayer={removePlayerHandler}/>
         </div>
