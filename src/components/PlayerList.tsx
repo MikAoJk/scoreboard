@@ -2,6 +2,7 @@ import Player, {PlayerData} from "@/components/Player";
 
 export interface PlayerProps {
     players: PlayerData[];
+    onChangRemovePlayer: (action: string) => void;
 }
 
 const PlayerList = (playerProps: PlayerProps) => {
@@ -12,8 +13,7 @@ const PlayerList = (playerProps: PlayerProps) => {
         <div className="mt-10">
             {playersSortedByScore
                 .map(player =>
-                    <Player playerData={player} key={player.id}
-                    />
+                    <Player playerData={player} key={player.id}  onSaveRemovePlayer={playerProps.onChangRemovePlayer}/>
                 )}
         </div>
     )

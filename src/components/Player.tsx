@@ -1,9 +1,10 @@
 import ChangePlayerScore from "./ChangePlayerScore";
-import {useState} from "react";
+import React, {useState} from "react";
 
 
 interface PlayerProps {
-    playerData: PlayerData
+    playerData: PlayerData;
+    onSaveRemovePlayer: (action: string) => void;
 }
 
 const Player = (playerProps: PlayerProps) => {
@@ -16,11 +17,19 @@ const Player = (playerProps: PlayerProps) => {
         })
     }
 
+    const onSaveRemovePlayerHandler = () => {
+        playerProps.onSaveRemovePlayer(playerProps.playerData.name)
+    }
+
     return (
         <ul className="mt-2">
             <li>{playerProps.playerData.name}</li>
             <li>{playerScore}</li>
             <li><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></li>
+            <li>
+                <button onClick={onSaveRemovePlayerHandler} type="button" className="bg-red-700">Remove
+                </button>
+            </li>
         </ul>
     )
 }

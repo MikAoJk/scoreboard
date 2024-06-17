@@ -1,7 +1,6 @@
 'use client';
 
 import {PlayerData} from "@/components/Player";
-import RemovePlayer from "@/components/RemovePlayer";
 import AddPlayer from "@/components/AddPlayer";
 import ScoreCard from "@/components/ScoreCard";
 
@@ -43,9 +42,8 @@ const ScoreBoard = () => {
     return (
         <div className="p-4 text-center">
             <h1 className="text-white">ScoreBoard</h1>
-            <ScoreCard players={players}/>
+            <ScoreCard players={players} onChangRemovePlayer={removePlayerHandler}/>
             <AddPlayer onChangAddPlayer={addPlayerHandler} numberOfPlayers={players.length}/>
-            <RemovePlayer onChangRemovePlayer={removePlayerHandler}/>
         </div>
     )
 }

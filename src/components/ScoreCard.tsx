@@ -3,6 +3,7 @@ import PlayerList from "./PlayerList";
 
 
 export interface ScoreCardProps {
+    onChangRemovePlayer: (action: string) => void;
     players: PlayerData[];
 }
 
@@ -10,7 +11,7 @@ const ScoreCard = (players: ScoreCardProps) => {
 
 
     return (
-        <PlayerList players={players.players}/>
+        <PlayerList players={players.players} onChangRemovePlayer={players.onChangRemovePlayer}/>
     )
 }
 
