@@ -25,8 +25,8 @@ const Player = (playerProps: PlayerProps) => {
         <ul className="mt-2 flex justify-start border-solid border-2 border-white">
             <li className="mx-4">{playerProps.playerData.name}</li>
             <li>{playerScore}</li>
-            <li className="ml-4"><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></li>
-            <li className="ml-4">
+            <li className="mx-4"><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></li>
+            <li className="mx-4">
                 <button onClick={onSaveRemovePlayerHandler} type="button" className="bg-red-700">Remove
                 </button>
             </li>
