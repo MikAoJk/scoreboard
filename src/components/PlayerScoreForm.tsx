@@ -30,7 +30,7 @@ const PlayerScoreForm = (playerScoreFormProps: PlayerScoreFormProps) => {
                 <div>
                     <label>Score</label>
                     <input type="number" value={enteredPlayerScore} step="1" onChange={playerScoreChangeHandler}
-                           className="text-black mr-2"/>
+                           className="text-black mr-2 text-xs"/>
                 </div>
             </div>
             <div>
