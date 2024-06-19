@@ -25,7 +25,7 @@ const ChangePlayerScore = (changePlayerScoreProp: ChangePlayerScoreProps) => {
 
     return (
         <div>
-            {!isEditing && <button onClick={startEditingHandler} type="button" className="cursor-pointer bg-gray-900 text-white ml-2">update</button>}
+            {!isEditing && <button onClick={startEditingHandler} type="button" className="cursor-pointer bg-gray-900 text-white ml-2">+/-</button>}
             {isEditing && <PlayerScoreForm onSavePlayerScore={savePlayerScoreHandler} onCancel={stopEditingHandler}/>}
         </div>
     )
