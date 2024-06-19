@@ -39,8 +39,8 @@ const ChangePlayerScore = (changePlayerScoreProp: ChangePlayerScoreProps) => {
 
     return (
         <div>
-            {!isEditing && <button onClick={startAddEditingHandler} type="button" className="cursor-pointer bg-gray-900 text-white ml-2">+</button>}
-            {!isEditing && <button onClick={startSubstractEditingHandler} type="button" className="cursor-pointer bg-gray-900 text-white ml-2">-</button>}
+            {!isEditing && <button onClick={startAddEditingHandler} type="button" className="cursor-pointer bg-sky-500 text-white ml-2">+</button>}
+            {!isEditing && <button onClick={startSubstractEditingHandler} type="button" className="cursor-pointer bg-sky-500 text-white ml-4">-</button>}
 
             {isEditing && isAddButtomClicked && <PlayerScoreForm onSavePlayerScore={saveAddPlayerScoreHandler} onCancel={stopEditingHandler}/>}                                                                                                                                         
             {isEditing && !isAddButtomClicked && <PlayerScoreForm onSavePlayerScore={saveSubstractPlayerScoreHandler} onCancel={stopEditingHandler}/>}
