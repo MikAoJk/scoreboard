@@ -30,12 +30,12 @@ const PlayerScoreForm = (playerScoreFormProps: PlayerScoreFormProps) => {
                 <div>
                     <label>Score</label>
                     <input type="number" value={enteredPlayerScore} step="1" onChange={playerScoreChangeHandler}
-                           className="text-black"/>
+                           className="text-black w-14 ml-2"/>
                 </div>
             </div>
             <div>
                 <button onClick={playerScoreFormProps.onCancel} type="button" className="mr-20 bg-yellow-400 mt-2">Cancel</button>
-                <button type="submit" className="bg-green-600">submit</button>
+                <button type="submit" className="bg-green-600">update</button>
             </div>
         </form>
     )
