@@ -33,8 +33,8 @@ const PlayerScoreForm = (playerScoreFormProps: PlayerScoreFormProps) => {
                 </div>
             </div>
             <div>
-                <button onClick={playerScoreFormProps.onCancel} type="button" className="mr-4 bg-yellow-400 mt-2">Cancel</button>
-                <button type="submit" className="bg-green-600">update</button>
+                <button onClick={playerScoreFormProps.onCancel} type="button" className="mr-4 bg-yellow-400 mt-2 rounded">Cancel</button>
+                <button type="submit" className="bg-green-600 rounded">update</button>
             </div>
         </form>
     )
