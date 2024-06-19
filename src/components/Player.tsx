@@ -26,7 +26,7 @@ const Player = (playerProps: PlayerProps) => {
             <li className="mx-4">{playerProps.playerData.name}</li>
             <li>{playerScore}</li>
             <li className="mx-4"><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></li>
-            <li className="px-4">
+            <li className="justify-right">
                 <button onClick={onSaveRemovePlayerHandler} type="button" className="bg-red-700">Remove
                 </button>
             </li>
