@@ -27,7 +27,7 @@ const AddPlayer = (addPlayerProps: AddPlayerProps) => {
 
     return (
         <div>
-            {!isEditing && <button onClick={startEditingHandler} type="button" className="cursor-pointer bg-green-600 mt-10 text-white">Add</button>}
+            {!isEditing && <button onClick={startEditingHandler} type="button" className="cursor-pointer bg-green-600 mt-10 text-white rounded">Add</button>}
             {isEditing && <AddPlayerForm onSaveAddPlayer={saveAddPlayerHandler} onCancel={stopEditingHandler} numberOfPlayers={addPlayerProps.numberOfPlayers}/>}
         </div>
     )
