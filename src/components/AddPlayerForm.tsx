@@ -39,7 +39,7 @@ const AddPlayerForm = (addPlayerFormProps: AddPlayerFormProps, numberOfPlayers: 
                 </div>
             </div>
             <div>
-                <button onClick={addPlayerFormProps.onCancel} type="button" className="mr-20 bg-yellow-400 mt-2">Cancel</button>
+                <button onClick={addPlayerFormProps.onCancel} type="button" className="mr-4 bg-yellow-400 mt-2">Cancel</button>
                 <button type="submit" className="bg-green-600">Add</button>
             </div>
         </form>
