@@ -34,7 +34,7 @@ const Player = (playerProps: PlayerProps) => {
             <li className="ml-2"><ChangePlayerScore onAddChangePlayerScore={addPlayerScoreHandler}
                                                     onSubstractChangePlayerScore={substractPlayerScoreHandler}/></li>
             <li className="ml-4">
-                <button onClick={onSaveRemovePlayerHandler} type="button" className="bg-red-700">Remove
+                <button onClick={onSaveRemovePlayerHandler} type="button" className="bg-red-700 rounded">Remove
                 </button>
             </li>
         </ul>
