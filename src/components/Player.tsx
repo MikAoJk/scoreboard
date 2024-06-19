@@ -17,16 +17,23 @@ const Player = (playerProps: PlayerProps) => {
         })
     }
 
+    const substractPlayerScoreHandler = (playerScore: number) => {
+        setPlayerScore(prevPlayerScore => {
+            return prevPlayerScore - playerScore
+        })
+    }
+
     const onSaveRemovePlayerHandler = () => {
         playerProps.onSaveRemovePlayer(playerProps.playerData.name)
     }
 
     return (
         <ul className="mt-2 flex justify-start border-solid border-2 border-white">
-            <li className="mr-4">{playerProps.playerData.name}</li>
+            <li className="mx-4">{playerProps.playerData.name}</li>
             <li>{playerScore}</li>
-            <li className="mx-4"><ChangePlayerScore onChangePlayerScore={addPlayerScoreHandler}/></li>
-            <li>
+            <li className="mx-4"><ChangePlayerScore onAddChangePlayerScore={addPlayerScoreHandler}
+                                                    onSubstractChangePlayerScore={substractPlayerScoreHandler}/></li>
+            <li className="px-4">
                 <button onClick={onSaveRemovePlayerHandler} type="button" className="bg-red-700">Remove
                 </button>
             </li>
