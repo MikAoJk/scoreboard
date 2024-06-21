@@ -35,7 +35,7 @@ const AddPlayerForm = (addPlayerFormProps: AddPlayerFormProps, numberOfPlayers: 
             <div>
                 <div>
                     <label>Name</label>
-                    <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName} onChange={addNewPlayerChangeHandler} className="text-black text-sm mt-4"/>
+                    <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName} onChange={addNewPlayerChangeHandler} className="text-black text-sm w-28 mt-4"/>
                 </div>
             </div>
             <div>
