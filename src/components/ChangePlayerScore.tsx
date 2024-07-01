@@ -1,5 +1,5 @@
-import PlayerScoreForm from "./PlayerScoreForm";
 import {useState} from "react";
+import PlayerScoreModal from "@/components/PlayerScoreModal";
 
 
 interface ChangePlayerScoreProps {
@@ -39,13 +39,24 @@ const ChangePlayerScore = (changePlayerScoreProp: ChangePlayerScoreProps) => {
 
     return (
         <div>
-            {!isEditing && <button onClick={startAddEditingHandler} type="button" className="cursor-pointer bg-sky-500 text-white ml-2 rounded">+</button>}
-            {!isEditing && <button onClick={startSubstractEditingHandler} type="button" className="cursor-pointer bg-sky-500 text-white ml-4 rounded">-</button>}
+            {!isEditing && <button onClick={startAddEditingHandler} type="button"
+                                   className="cursor-pointer bg-sky-500 text-white ml-2 rounded">+</button>}
+            {!isEditing && <button onClick={startSubstractEditingHandler} type="button"
+                                   className="cursor-pointer bg-sky-500 text-white ml-4 rounded">-</button>}
 
-            {isEditing && isAddButtomClicked && <PlayerScoreForm onSavePlayerScore={saveAddPlayerScoreHandler} onCancel={stopEditingHandler}/>}                                                                                                                                         
-            {isEditing && !isAddButtomClicked && <PlayerScoreForm onSavePlayerScore={saveSubstractPlayerScoreHandler} onCancel={stopEditingHandler}/>}
+            {isEditing && isAddButtomClicked &&
+                <PlayerScoreModal onSavePlayerScore={saveAddPlayerScoreHandler} onCancel={stopEditingHandler}
+                                  arithmeticSign={ArithmeticSign.Add}/>}
+            {isEditing && !isAddButtomClicked &&
+                <PlayerScoreModal onSavePlayerScore={saveSubstractPlayerScoreHandler} onCancel={stopEditingHandler}
+                                  arithmeticSign={ArithmeticSign.Substract}/>}
         </div>
     )
+}
+
+export enum ArithmeticSign {
+    Substract = "Substract",
+    Add = "Add"
 }
 
 export default ChangePlayerScore
