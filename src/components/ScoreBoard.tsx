@@ -28,7 +28,7 @@ const ScoreBoard = () => {
     const [players, setPlayers] = useState(initPlayers)
 
     useEffect(() => {
-    const value = localStorage.getItem('players')<PlayerData[]> || initPlayers
+    const value: PlayerData[]= localStorage.getItem('players') || initPlayers
     setPlayers(value)
   }, [])
 
