@@ -30,7 +30,7 @@ const ScoreBoard = () => {
     useEffect(() => {
     let value
     // Get the value from local storage if it exists
-    value = localStorage.getItem("players") || ""
+    value = localStorage.getItem("players") || initPlayers
     setPlayers(value)
   }, [])
 
