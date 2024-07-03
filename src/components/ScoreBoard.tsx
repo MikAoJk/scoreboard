@@ -4,7 +4,7 @@ import {PlayerData} from "@/components/Player";
 import AddPlayer from "@/components/AddPlayer";
 import ScoreCard from "@/components/ScoreCard";
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 
 const joakim: PlayerData = {
@@ -27,10 +27,18 @@ const ScoreBoard = () => {
 
     const [players, setPlayers] = useState(initPlayers)
 
+    useEffect(() => {
+    let value
+    // Get the value from local storage if it exists
+    value = localStorage.getItem("players") || ""
+    setPlayers(value)
+  }, [])
+
     const addPlayerHandler = (player: PlayerData) => {
         setPlayers(prevPlayers => {
             return [player, ...prevPlayers]
         })
+        localStorage.setItem("players", players)
     }
 
     const removePlayerHandler = (playerName: string) => {
