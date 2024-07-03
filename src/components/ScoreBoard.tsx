@@ -39,17 +39,16 @@ const ScoreBoard = () => {
     }, [])
 
     const addPlayerHandler = (player: PlayerData) => {
-        const cuurentPlayers :PlayerData[] = prevPlayers => {
-             return [player, ...prevPlayers]
-        }
-        localStorage.setItem('players', JSON.stringify(cuurentPlayers))
+        setPlayers(prevPlayers => {
+            return [player, ...prevPlayers]
+        })
+
     }
 
     const removePlayerHandler = (playerName: string) => {
-       const curentPlayers :PlayerData[] = prevPlayers => {
+       setPlayers(prevPlayers => {
             return prevPlayers.filter((playerData) => playerData.name !== playerName)
-        }
-        localStorage.setItem('players',curentPlayers)
+        })
     }
 
     return (
