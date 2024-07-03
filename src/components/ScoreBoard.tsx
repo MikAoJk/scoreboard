@@ -30,7 +30,7 @@ const ScoreBoard = () => {
     useEffect(() => {
     let value
     // Get the value from local storage if it exists
-    value = localStorage.getItem(players) || initPlayers
+    value = localStorage.getItem('players') || initPlayers
     setPlayers(value)
   }, [])
 
@@ -38,7 +38,7 @@ const ScoreBoard = () => {
         setPlayers(prevPlayers => {
             return [player, ...prevPlayers]
         })
-        localStorage.setItem("players", players)
+        localStorage.setItem('players', players)
     }
 
     const removePlayerHandler = (playerName: string) => {
