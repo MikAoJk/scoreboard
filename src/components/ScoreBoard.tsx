@@ -35,8 +35,8 @@ const ScoreBoard = () => {
             setPlayers(initPlayers)
         }
         else {
-    const valuePlayer: PlayerData[] = JSON.parse(value) || initPlayers
-    setPlayers(valuePlayer)
+        const valuePlayer: PlayerData[] = JSON.parse(value)
+        setPlayers(valuePlayer)
         }
   }, [])
 
