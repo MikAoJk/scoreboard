@@ -35,7 +35,7 @@ const ScoreBoard = () => {
             setPlayers(initPlayers)
         }
         else {
-    const valuePlayer: PlayerData[] = JSON.parse(localStorage.getItem('players')) || initPlayers
+    const valuePlayer: PlayerData[] = JSON.parse(value) || initPlayers
     setPlayers(valuePlayer)
         }
   }, [])
