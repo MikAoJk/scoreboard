@@ -29,21 +29,21 @@ const ScoreBoard = () => {
 
     useEffect(() => {
         const value = localStorage.getItem('players')
-        
-        if (value === null)
-        {
+
+        if (value === null) {
             setPlayers(initPlayers)
+        } else {
+            const valuePlayer: PlayerData[] = JSON.parse(value)
+            setPlayers(valuePlayer)
         }
-        else {
-        const valuePlayer: PlayerData[] = JSON.parse(value)
-        setPlayers(valuePlayer)
-        }
-  }, [])
+    }, [])
 
     const addPlayerHandler = (player: PlayerData) => {
+      /*
         setPlayers(prevPlayers => {
             return [player, ...prevPlayers]
-        })
+        }) */
+
         localStorage.setItem('players', JSON.stringify(players))
     }
 
