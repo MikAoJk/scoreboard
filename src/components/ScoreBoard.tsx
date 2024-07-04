@@ -45,7 +45,7 @@ const ScoreBoard = () => {
 
         const currrntPlayers = players.push(player)
 
-        localStorage.getItem('players', currrntPlayers)
+        localStorage.setItem('players', currrntPlayers)
 
     }
 
