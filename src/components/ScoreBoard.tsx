@@ -27,6 +27,7 @@ const ScoreBoard = () => {
 
     const [players, setPlayers] = useState(initPlayers)
 
+    /*
     useEffect(() => {
         const value = localStorage.getItem('players')
 
@@ -37,15 +38,18 @@ const ScoreBoard = () => {
             setPlayers(valuePlayer)
         }
     }, [])
+    */
 
     const addPlayerHandler = (player: PlayerData) => {
         setPlayers(prevPlayers => {
             return [player, ...prevPlayers]
         })
 
+        /*
         const currrntPlayers = players.push(player)
 
         localStorage.setItem('players', JSON.stringify(currrntPlayers))
+        */
 
     }
 
