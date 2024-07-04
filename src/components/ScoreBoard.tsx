@@ -43,6 +43,10 @@ const ScoreBoard = () => {
             return [player, ...prevPlayers]
         })
 
+        const currrntPlayers = players.push(player)
+
+        localStorage.getItem('players', currrntPlayers)
+
     }
 
     const removePlayerHandler = (playerName: string) => {
