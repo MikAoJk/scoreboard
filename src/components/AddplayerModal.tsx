@@ -26,7 +26,7 @@ const AddPlayerModal = (addPlayerModalProps: AddPlayerModalProps, numberOfPlayer
 
         addPlayerModalProps.onSaveAddPlayer(playerData)
 
-        setPlayerData('')
+      //  setPlayerData('')
 
     }
 
