@@ -28,7 +28,7 @@ const Player = (playerProps: PlayerProps) => {
     }
 
     return (
-        <ul className="mt-4 flex">
+        <ul className="mt-4 flex border-solid border-white border-2">
             <li className="w-1/5">{playerProps.playerData.name}</li>
             <li className="w-1/5">{playerScore}</li>
             <li className="w-1/5"><ChangePlayerScore onAddChangePlayerScore={addPlayerScoreHandler}
