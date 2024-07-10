@@ -40,7 +40,7 @@ const ChangePlayerScore = (changePlayerScoreProp: ChangePlayerScoreProps) => {
     return (
         <div>
             {!isEditing && <button onClick={startAddEditingHandler} type="button"
-                                   className="cursor-pointer bg-sky-500 text-white rounded mr-4">+</button>}
+                                   className="cursor-pointer bg-sky-500 text-white rounded mr-4 md:mr-10">+</button>}
             {!isEditing && <button onClick={startSubstractEditingHandler} type="button"
                                    className="cursor-pointer bg-sky-500 text-white rounded">-</button>}
 
