@@ -2,7 +2,7 @@ import ScoreBoard from "@/components/ScoreBoard";
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between text:2xl md:text-6xl">
+        <main className="flex items-center text:2xl md:text-6xl">
             <ScoreBoard/>
         </main>
     );
