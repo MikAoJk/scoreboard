@@ -29,7 +29,7 @@ const Player = (playerProps: PlayerProps) => {
 
     return (
         <ul className="mt-4 flex border-solid border-white border-2">
-            <li className="w-1/4">{playerProps.playerData.name}</li>
+            <li className="w-1/4 text-left">{playerProps.playerData.name}</li>
             <li className="w-1/4">{playerScore}</li>
             <li className="w-1/4"><ChangePlayerScore onAddChangePlayerScore={addPlayerScoreHandler}
                                                     onSubstractChangePlayerScore={substractPlayerScoreHandler}/></li>
