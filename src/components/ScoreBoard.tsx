@@ -43,15 +43,13 @@ const ScoreBoard = () => {
 }
 
     const addPlayerHandler = (player: PlayerData) => {
-        setPlayers(prevPlayers => {
-            return [player, ...prevPlayers]
-        })
 
-        /*
+        
         const currrntPlayers = players.push(player)
-
+        
         localStorage.setItem('players', JSON.stringify(currrntPlayers))
-        */
+        
+        setPlayers(currrntPlayers)
 
     }
 
