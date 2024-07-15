@@ -39,8 +39,8 @@ const ScoreBoard = () => {
             const valuePlayer: PlayerData[] = JSON.parse(value)
             setPlayers(valuePlayer)
         }
+     }
     }, [])
-}
 
     const addPlayerHandler = (player: PlayerData) => {
 
