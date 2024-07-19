@@ -1,4 +1,5 @@
 # scoreboard
+A simple scoreboard, that we use for board games
 
 ## Technologies used
 * Bun
