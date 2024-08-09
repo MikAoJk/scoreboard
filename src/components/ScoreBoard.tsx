@@ -33,7 +33,6 @@ const ScoreBoard = () => {
 
             const value = localStorage.getItem('players')
 
-            console.log(`value: ${value}`)
 
             if (value === null || value === 'undefined') {
                 localStorage.setItem('players', JSON.stringify(initPlayers))
@@ -54,10 +53,6 @@ const ScoreBoard = () => {
                 const valuePlayer: PlayerData[] = JSON.parse(value)
                 valuePlayer.push(player)
 
-                console.log(`currentPlayers: ${valuePlayer.map(player =>
-                    player.id
-                )}`)
-
                 localStorage.setItem('players', JSON.stringify(valuePlayer))
 
                 setPlayers(valuePlayer)
@@ -65,31 +60,87 @@ const ScoreBoard = () => {
         }
     }
 
-    const removePlayerHandler = (playerName: string) => {
+    const removePlayerHandler = (playerId: number) => {
         const value = localStorage.getItem('players')
 
         if (value !== null || value === 'undefined') {
             const valuePlayer: PlayerData[] = JSON.parse(value)
 
-            const index = valuePlayer.findIndex(playerdata => playerdata.name === playerName);
+            const index = valuePlayer.findIndex(playerdata => playerdata.id === playerId);
 
             if (index !== -1) {
                 const newArray = [...valuePlayer.slice(0, index), ...valuePlayer.slice(index + 1)];
 
                 localStorage.setItem('players', JSON.stringify(newArray))
-                setPlayers(prevPlayers => {
-                    return prevPlayers.filter((playerData) => playerData.name !== playerName)
-                })
+                setPlayers(newArray)
 
             }
 
         }
     }
 
+    const addPlayerScoreHandler = (playerId: number, playerScore: number) => {
+
+        const value = localStorage.getItem('players')
+
+        if (value !== null || value === 'undefined') {
+            const valuePlayer: PlayerData[] = JSON.parse(value)
+
+            const index = valuePlayer.findIndex(playerdata => playerdata.id === playerId);
+
+            if (index !== -1) {
+                const player = valuePlayer.findLast(playerdata => playerdata.id === playerId);
+                if (player !== null && player !== undefined) {
+                    player.score += playerScore
+
+                    const newArray = [...valuePlayer.slice(0, index), ...valuePlayer.slice(index + 1)];
+                    newArray.push(player)
+
+                    localStorage.setItem('players', JSON.stringify(newArray))
+                    setPlayers(newArray)
+                }
+
+
+            }
+
+        }
+
+    }
+
+    const substractPlayerScoreHandler = (playerId: number, playerScore: number) => {
+        const value = localStorage.getItem('players')
+
+        if (value !== null || value === 'undefined') {
+            const valuePlayer: PlayerData[] = JSON.parse(value)
+
+            const index = valuePlayer.findIndex(playerdata => playerdata.id === playerId);
+
+            if (index !== -1) {
+                const player = valuePlayer.findLast(playerdata => playerdata.id === playerId);
+                if (player !== null && player !== undefined) {
+                    player.score -= playerScore
+
+                    const newArray = [...valuePlayer.slice(0, index), ...valuePlayer.slice(index + 1)];
+                    newArray.push(player)
+
+                    localStorage.setItem('players', JSON.stringify(newArray))
+                    setPlayers(newArray)
+                }
+
+
+            }
+
+        }
+    }
+
+
     return (
         <div className="text-center">
             <h1 className="text-white">ScoreBoard</h1>
-            <ScoreCard players={players} onChangRemovePlayer={removePlayerHandler}/>
+            <ScoreCard players={players}
+                       onChangRemovePlayer={removePlayerHandler}
+                       onChangSubstractPlayerScore={substractPlayerScoreHandler}
+                       onChangAddPlayerScore={addPlayerScoreHandler}/>
             <AddPlayer onChangAddPlayer={addPlayerHandler}/>
         </div>
     )
