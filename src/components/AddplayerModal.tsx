@@ -4,7 +4,6 @@ import {PlayerData} from "./Player";
 interface AddPlayerModalProps {
     onSaveAddPlayer: (action: PlayerData) => void;
     onCancel: () => void;
-    numberOfPlayers: number;
 }
 
 const AddPlayerModal = (addPlayerModalProps: AddPlayerModalProps, numberOfPlayers: number) => {
@@ -18,15 +17,18 @@ const AddPlayerModal = (addPlayerModalProps: AddPlayerModalProps, numberOfPlayer
     const submitHandler = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
+        const min = 3;
+        const max = 1000;
+        const randomNumber =
+            Math.floor(Math.random() * (max - min + 1)) + min;
+
         const playerData: PlayerData = {
-            id: (numberOfPlayers + 1),
+            id: randomNumber,
             name: enteredPlayerName,
             score: 0
         }
 
         addPlayerModalProps.onSaveAddPlayer(playerData)
-
-      //  setPlayerData('')
 
     }
 

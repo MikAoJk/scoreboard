@@ -4,7 +4,6 @@ import AddPlayerModal from "@/components/AddplayerModal";
 
 interface AddPlayerProps {
     onChangAddPlayer: (action: PlayerData) => void;
-    numberOfPlayers: number;
 }
 
 
@@ -28,7 +27,7 @@ const AddPlayer = (addPlayerProps: AddPlayerProps) => {
     return (
         <div>
             {!isEditing && <button onClick={startEditingHandler} type="button" className="cursor-pointer mt-10 bg-green-600 text-white rounded">Add</button>}
-            {isEditing && <AddPlayerModal onSaveAddPlayer={saveAddPlayerHandler} onCancel={stopEditingHandler} numberOfPlayers={addPlayerProps.numberOfPlayers}/>}
+            {isEditing && <AddPlayerModal onSaveAddPlayer={saveAddPlayerHandler} onCancel={stopEditingHandler}/>}
         </div>
     )
 }
