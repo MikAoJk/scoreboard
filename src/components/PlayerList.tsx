@@ -2,7 +2,9 @@ import Player, {PlayerData} from "@/components/Player";
 
 export interface PlayerProps {
     players: PlayerData[];
-    onChangRemovePlayer: (action: string) => void;
+    onChangRemovePlayer: (playerId: number) => void;
+    onChangSubstractPlayerScore: (playerId: number, playerScore: number) => void;
+    onChangAddPlayerScore: (playerId: number, playerScore: number) => void;
 }
 
 const PlayerList = (playerProps: PlayerProps) => {
@@ -13,7 +15,11 @@ const PlayerList = (playerProps: PlayerProps) => {
         <div className="mt-10">
             {playersSortedByScore
                 .map(player =>
-                    <Player playerData={player} key={player.id}  onSaveRemovePlayer={playerProps.onChangRemovePlayer}/>
+                    <Player playerData={player} key={player.id}
+                            onSaveRemovePlayer={playerProps.onChangRemovePlayer}
+                            onChangSubstractPlayerScore={playerProps.onChangSubstractPlayerScore}
+                            onChangAddPlayerScore={playerProps.onChangAddPlayerScore}
+                    />
                 )}
         </div>
     )

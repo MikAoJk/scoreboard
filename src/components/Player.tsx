@@ -1,36 +1,32 @@
 import ChangePlayerScore from "./ChangePlayerScore";
-import React, {useState} from "react";
+import React from "react";
 
 
 interface PlayerProps {
     playerData: PlayerData;
-    onSaveRemovePlayer: (action: string) => void;
+    onSaveRemovePlayer: (playerId: number) => void;
+    onChangSubstractPlayerScore: (playerId: number, playerScore: number) => void;
+    onChangAddPlayerScore: (playerId: number, playerScore: number) => void;
 }
 
 const Player = (playerProps: PlayerProps) => {
 
-    const [playerScore, setPlayerScore] = useState(playerProps.playerData.score)
-
     const addPlayerScoreHandler = (playerScore: number) => {
-        setPlayerScore(prevPlayerScore => {
-            return prevPlayerScore + playerScore
-        })
+        playerProps.onChangAddPlayerScore(playerProps.playerData.id, playerScore)
     }
 
     const substractPlayerScoreHandler = (playerScore: number) => {
-        setPlayerScore(prevPlayerScore => {
-            return prevPlayerScore - playerScore
-        })
+        playerProps.onChangSubstractPlayerScore(playerProps.playerData.id, playerScore)
     }
 
     const onSaveRemovePlayerHandler = () => {
-        playerProps.onSaveRemovePlayer(playerProps.playerData.name)
+        playerProps.onSaveRemovePlayer(playerProps.playerData.id)
     }
 
     return (
         <ul className="mt-4 flex border-solid border-white border-2">
             <li className="w-1/4 text-left ml-2">{playerProps.playerData.name}</li>
-            <li className="w-1/4">{playerScore}</li>
+            <li className="w-1/4">{playerProps.playerData.score}</li>
             <li className="w-1/4"><ChangePlayerScore onAddChangePlayerScore={addPlayerScoreHandler}
                                                     onSubstractChangePlayerScore={substractPlayerScoreHandler}/></li>
             <li className="w-1/4 text-right mr-2">
