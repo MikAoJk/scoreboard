@@ -25,7 +25,7 @@ const ScoreBoard = () => {
     const initPlayers =
         [joakim, birgitte]
 
-    const [players, setPlayers] = useState<PlayerData[]>(initPlayers)
+    const [players, setPlayers] = useState<PlayerData[]>([])
 
 
     useEffect(() => {
