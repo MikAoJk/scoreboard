@@ -40,9 +40,9 @@ const ChangePlayerScore = (changePlayerScoreProp: ChangePlayerScoreProps) => {
     return (
         <div>
             {!isEditing && <button onClick={startAddEditingHandler} type="button"
-                                   className="cursor-pointer bg-sky-500 text-white rounded mr-4 md:mr-10">+</button>}
+                                   className="cursor-pointer bg-sky-500 text-white rounded mr-4 md:mr-10 font-bold py-2 px-4">+</button>}
             {!isEditing && <button onClick={startSubstractEditingHandler} type="button"
-                                   className="cursor-pointer bg-sky-500 text-white rounded">-</button>}
+                                   className="cursor-pointer bg-sky-500 text-white rounded font-bold py-2 px-4">-</button>}
 
             {isEditing && isAddButtomClicked &&
                 <PlayerScoreModal onSavePlayerScore={saveAddPlayerScoreHandler} onCancel={stopEditingHandler}
