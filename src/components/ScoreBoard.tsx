@@ -49,7 +49,7 @@ const ScoreBoard = () => {
 
             const value = localStorage.getItem('players')
 
-            if (value !== null || value === 'undefined') {
+            if (value !== null && value !== 'undefined') {
                 const valuePlayer: PlayerData[] = JSON.parse(value)
                 valuePlayer.push(player)
 
@@ -63,7 +63,7 @@ const ScoreBoard = () => {
     const removePlayerHandler = (playerId: number) => {
         const value = localStorage.getItem('players')
 
-        if (value !== null || value === 'undefined') {
+        if (value !== null && value !== 'undefined') {
             const valuePlayer: PlayerData[] = JSON.parse(value)
 
             const index = valuePlayer.findIndex(playerdata => playerdata.id === playerId);
@@ -83,13 +83,13 @@ const ScoreBoard = () => {
 
         const value = localStorage.getItem('players')
 
-        if (value !== null || value === 'undefined') {
+        if (value !== null && value !== 'undefined') {
             const valuePlayer: PlayerData[] = JSON.parse(value)
 
             const index = valuePlayer.findIndex(playerdata => playerdata.id === playerId);
 
             if (index !== -1) {
-                const player = valuePlayer.findLast(playerdata => playerdata.id === playerId);
+                const player = valuePlayer[index];
                 if (player !== null && player !== undefined) {
                     player.score += playerScore
 
@@ -110,13 +110,13 @@ const ScoreBoard = () => {
     const substractPlayerScoreHandler = (playerId: number, playerScore: number) => {
         const value = localStorage.getItem('players')
 
-        if (value !== null || value === 'undefined') {
+        if (value !== null && value !== 'undefined') {
             const valuePlayer: PlayerData[] = JSON.parse(value)
 
             const index = valuePlayer.findIndex(playerdata => playerdata.id === playerId);
 
             if (index !== -1) {
-                const player = valuePlayer.findLast(playerdata => playerdata.id === playerId);
+                const player = valuePlayer[index];
                 if (player !== null && player !== undefined) {
                     player.score -= playerScore
 
