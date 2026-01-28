@@ -35,7 +35,7 @@ const PlayerScoreModal = (playerScoreModalProps: PlayerScoreModalProps) => {
                         <label>{playerScoreModalProps.arithmeticSign.toLocaleString()}</label>
                         <div>
                             <input type="number" value={enteredPlayerScore} step="1" onChange={playerScoreChangeHandler}
-                                   className="text-black ml-2"/>
+                                   className="ml-4 text-black mt-4 border border-gray-300 rounded px-2 py-1"/>
                         </div>
                     </div>
                     <div>
