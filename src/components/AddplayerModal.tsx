@@ -41,7 +41,7 @@ const AddPlayerModal = (addPlayerModalProps: AddPlayerModalProps) => {
                         <div>
                             <label>Name</label>
                             <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName}
-                                   onChange={addNewPlayerChangeHandler} className="ml-4 text-black mt-4"/>
+                                   onChange={addNewPlayerChangeHandler} className="ml-4 text-black mt-4 border border-gray-300 rounded px-2 py-1"/>
                         </div>
                     </div>
                     <div>
