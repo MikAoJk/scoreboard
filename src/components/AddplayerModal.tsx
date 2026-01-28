@@ -6,7 +6,7 @@ interface AddPlayerModalProps {
     onCancel: () => void;
 }
 
-const AddPlayerModal = (addPlayerModalProps: AddPlayerModalProps, numberOfPlayers: number) => {
+const AddPlayerModal = (addPlayerModalProps: AddPlayerModalProps) => {
 
     const [enteredPlayerName, setPlayerData] = useState('')
 

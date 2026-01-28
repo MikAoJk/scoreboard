@@ -9,7 +9,7 @@ export interface PlayerProps {
 
 const PlayerList = (playerProps: PlayerProps) => {
 
-    const playersSortedByScore = playerProps.players.sort((a, b) => b.score - a.score)
+    const playersSortedByScore = [...playerProps.players].sort((a, b) => b.score - a.score)
 
     return (
         <div className="mt-10">
