@@ -1,7 +1,7 @@
 import ScoreBoard from "@/components/ScoreBoard";
-import {JSX} from "react";
 
-export default function Home(): JSX.Element {
+
+export default function Home() {
     return (
         <main className="text:7xl md:text:6xl">
             <ScoreBoard/>
