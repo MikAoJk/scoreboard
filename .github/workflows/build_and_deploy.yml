@@ -1,0 +1,33 @@
+name: build and deploy main branch
+on:
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_BASE_PATH: /random-diagnosis-code
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install packages
+        run: bun install
+      - name: Build
+        run: bun run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./out
+  
