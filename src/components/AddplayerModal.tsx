@@ -36,19 +36,19 @@ const AddPlayerModal = (addPlayerModalProps: AddPlayerModalProps) => {
         <form onSubmit={submitHandler}>
             <dialog
                 className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
-                <div className="bg-gray-600 m-auto p-8">
+                <div className="m-auto rounded-lg bg-white p-8 text-slate-900 shadow-lg dark:bg-slate-800 dark:text-slate-100">
                     <div className="flex flex-col items-center">
                         <div>
-                            <label>Name</label>
+                            <label className="font-medium">Name</label>
                             <input type="text" pattern="^[^0-9]+$" value={enteredPlayerName}
-                                   onChange={addNewPlayerChangeHandler} className="ml-4 text-black mt-4 border border-gray-300 rounded px-2 py-1"/>
+                                   onChange={addNewPlayerChangeHandler} className="ml-4 mt-4 rounded border border-slate-300 bg-white px-2 py-1 text-slate-900 dark:border-slate-600 dark:bg-slate-100"/>
                         </div>
                     </div>
                     <div>
                         <button onClick={addPlayerModalProps.onCancel} type="button"
-                                className="mr-20 bg-yellow-400 mt-2 rounded">Cancel
+                                className="mr-20 mt-2 rounded bg-yellow-400 px-2 py-1 font-medium text-slate-900">Cancel
                         </button>
-                        <button type="submit" className="bg-green-600 rounded">Add</button>
+                        <button type="submit" className="rounded bg-green-600 px-2 py-1 font-medium text-white">Add</button>
                     </div>
                 </div>
             </dialog>
@@ -56,4 +56,3 @@ const AddPlayerModal = (addPlayerModalProps: AddPlayerModalProps) => {
     )
 }
 export default AddPlayerModal
-
