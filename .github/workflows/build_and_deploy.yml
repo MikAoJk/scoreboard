@@ -21,7 +21,7 @@ jobs:
       NEXT_PUBLIC_BASE_PATH: /scoreboard
     steps:
       - name: Checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
       - name: setup bun
         uses: oven-sh/setup-bun@v2
       - name: Install packages
