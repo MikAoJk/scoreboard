@@ -1,4 +1,5 @@
 import Player, {PlayerData} from "@/components/Player";
+import {useState} from "react";
 
 export interface PlayerProps {
     players: PlayerData[];
@@ -8,11 +9,22 @@ export interface PlayerProps {
 }
 
 const PlayerList = (playerProps: PlayerProps) => {
+    const [sortAscending, setSortAscending] = useState(false)
 
-    const playersSortedByScore = [...playerProps.players].sort((a, b) => b.score - a.score)
+    const playersSortedByScore = [...playerProps.players].sort((a, b) =>
+        sortAscending ? a.score - b.score : b.score - a.score
+    )
 
     return (
         <div className="mt-10">
+            <button
+                onClick={() => setSortAscending(ascending => !ascending)}
+                type="button"
+                aria-label={`Sort by player score ${sortAscending ? "ascending" : "descending"}`}
+                className="cursor-pointer rounded bg-slate-700 px-4 py-2 font-bold text-white"
+            >
+                Sort by score: {sortAscending ? "Ascending" : "Descending"}
+            </button>
             {playersSortedByScore
                 .map(player =>
                     <Player playerData={player} key={player.id}
