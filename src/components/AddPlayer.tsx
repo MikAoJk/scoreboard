@@ -26,7 +26,7 @@ const AddPlayer = (addPlayerProps: AddPlayerProps) => {
 
     return (
         <div>
-            {!isEditing && <button onClick={startEditingHandler} type="button" className="mt-10 cursor-pointer rounded bg-green-600 px-4 py-2 font-bold text-white shadow-sm">Add</button>}
+            {!isEditing && <button onClick={startEditingHandler} type="button" className="mt-8 cursor-pointer rounded bg-green-600 px-4 py-2 font-bold text-white shadow-sm">Add</button>}
             {isEditing && <AddPlayerModal onSaveAddPlayer={saveAddPlayerHandler} onCancel={stopEditingHandler}/>}
         </div>
     )

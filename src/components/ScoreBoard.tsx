@@ -136,7 +136,6 @@ const ScoreBoard = () => {
 
     return (
         <div className="mx-auto mt-10 max-w-3xl px-4 text-center">
-            <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-100">ScoreBoard</h1>
             <ScoreCard players={players}
                        onChangRemovePlayer={removePlayerHandler}
                        onChangSubstractPlayerScore={substractPlayerScoreHandler}
