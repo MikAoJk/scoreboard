@@ -21,7 +21,7 @@ const PlayerList = (playerProps: PlayerProps) => {
                 onClick={() => setSortAscending(ascending => !ascending)}
                 type="button"
                 aria-label={`Sort by player score ${sortAscending ? "ascending" : "descending"}`}
-                className="cursor-pointer rounded bg-slate-700 px-4 py-2 font-bold text-white"
+                className="cursor-pointer rounded bg-slate-700 px-4 py-2 font-bold text-white mb-4"
             >
                 Sort by score: {sortAscending ? "Ascending" : "Descending"}
             </button>
